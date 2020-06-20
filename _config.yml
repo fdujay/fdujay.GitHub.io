@@ -11,7 +11,7 @@ github_repo: "https://github.com/fdujay/fdujay.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "天不生夫子，万古如长夜。天又生我们，长夜才复旦"
+sidebar-about-description: "我善养吾浩然之气"
 sidebar-avatar: /img/头像.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
