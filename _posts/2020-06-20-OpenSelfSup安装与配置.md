@@ -103,3 +103,71 @@ bash tools/prepare_data/prepare_voc07_cls.sh /home/davis/data/VOC
 >
 > 这样最困难的数据下载部分就解决了，剩下的如：解压、添加符号链接等，就可以很快完成了。
 
+### 准备ImageNet & Places205
+
+与VOC类似，需要下载数据后，按照格式存放，并建立指向`$OPENSELFSUP/data/`的软链接。
+
+```
+OpenSelfSup
+├── openselfsup
+├── benchmarks
+├── configs
+├── data
+│   ├── VOCdevkit
+│   │   ├── VOC2007
+│   │   ├── VOC2012
+│   ├── imagenet
+│   │   ├── meta
+│   │   |   ├── train.txt (for self-sup training, "filename\n" in each line)
+│   │   |   ├── train_labeled.txt (for evaluation, "filename[space]label\n" in each line)
+│   │   |   ├── train_labeled_1percent.txt (for evaluation)
+│   │   |   ├── train_labeled_10percent.txt (for evaluation)
+│   │   |   ├── val.txt
+│   │   |   ├── val_labeled.txt
+│   │   ├── train
+│   │   ├── val
+│   ├── places205
+│   │   ├── meta
+│   │   |   ├── train.txt
+│   │   |   ├── train_labeled.txt
+│   │   |   ├── val.txt
+│   │   |   ├── val_labeled.txt
+│   │   ├── train
+│   │   ├── val
+```
+
+## 总结
+
+需要用到的指令：
+
+```shell
+conda create -n open-mmlab python=3.7 -y
+conda activate open-mmlab
+
+conda install -c pytorch pytorch torchvision -y
+git clone https://github.com/open-mmlab/OpenSelfSup.git
+cd OpenSelfSup
+pip install -v -e .
+
+bash tools/prepare_data/prepare_voc07_cls.sh $YOUR_DATA_ROOT
+ln -s $IMAGENET_ROOT data/imagenet
+ln -s $PLACES_ROOT data/places205
+```
+
+> 以上命令不包括ImageNet和Places205的下载，需要自己准备。
+
+如果您的计算机上有多个`openselfsup`，并且您想交替使用它们，则建议的方法是创建多个`conda`环境并对不同版本使用不同的环境。
+
+另一种方法是将以下代码插入主脚本（`train.py`，`test.py`或者其他使用的脚本）
+
+```shell
+import os.path as osp
+import sys
+sys.path.insert(0, osp.join(osp.dirname(osp.abspath(__file__)), '../'))
+```
+
+或者在相应文件夹的终端中运行以下命令以临时使用当前文件夹。
+
+```shell
+export PYTHONPATH=`pwd`:$PYTHONPATH
+```
