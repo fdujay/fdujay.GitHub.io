@@ -97,7 +97,9 @@ cd ./openselfsup/
 bash tools/prepare_data/prepare_voc07_cls.sh /home/davis/data/VOC
 ```
 
-> 这里我首先在国内的镜像网站下载了`VOC`数据，然后对`shell`文件进行修改，注释了`wget`命令；
+> 这里我首先在国内的镜像网站[Pascal VOC Dataset Mirror](https://pjreddie.com/projects/pascal-voc-dataset-mirror/)下载了`VOC`数据。
 >
-> 其实最困难的地方就在于数据下载，剩下的如解压、添加符号链接就很快完成了。
+> 然后对`shell`文件进行修改，注释了`wget`命令。
+>
+> 这样最困难的数据下载部分就解决了，剩下的如：解压、添加符号链接等，就可以很快完成了。
 
