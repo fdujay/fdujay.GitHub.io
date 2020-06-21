@@ -90,5 +90,14 @@ conda install pytorch torchvision faiss-gpu cudatoolkit=10.0 -c pytorch
 
 ### 准备PASCAL VOC
 
-假设您通常将数据集存储在`$ YOUR_DATA_ROOT`中（例如，对我来说是`/home/davis/data/`）。该脚本将自动将PASCAL VOC 2007下载到​`$ YOUR_DATA_ROOT`中，准备所需的文件，在`$ OPENSELFSUP`下创建一个文件夹`data`，并创建一个符号链接`VOCdevkit`。
+假设您通常将数据集存储在`$ YOUR_DATA_ROOT`中（例如，对我来说是`/home/davis/data/`）。该脚本将自动将PASCAL VOC 2007下载到​`$ YOUR_DATA_ROOT`中，准备所需的文件，在`$ OPENSELFSUP`下创建一个文件夹`data`，并创建一个符号链接`VOCdevkit`，e.g.，
+
+```shell
+cd ./openselfsup/
+bash tools/prepare_data/prepare_voc07_cls.sh /home/davis/data/VOC
+```
+
+> 这里我首先在国内的镜像网站下载了`VOC`数据，然后对`shell`文件进行修改，注释了`wget`命令；
+>
+> 其实最困难的地方就在于数据下载，剩下的如解压、添加符号链接就很快完成了。
 
