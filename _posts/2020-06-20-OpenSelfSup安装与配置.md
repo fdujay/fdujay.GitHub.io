@@ -88,7 +88,7 @@ conda install pytorch torchvision faiss-gpu cudatoolkit=10.0 -c pytorch
 
 具体的数据准备方法同样参考[INSTALL.md](https://github.com/open-mmlab/OpenSelfSup/blob/master/docs/INSTALL.md)，文档中`PASCAL VOC`是可以自动配置的，`ImageNet`和`Places205`需要自己下载，并自行按照指示配置。
 
-#### 准备PASCAL VOC
+### 准备PASCAL VOC
 
 假设您通常将数据集存储在`$ YOUR_DATA_ROOT`中（例如，对我来说是`/home/davis/data/`）。该脚本将自动将PASCAL VOC 2007下载到​`$ YOUR_DATA_ROOT`中，准备所需的文件，在`$ OPENSELFSUP`下创建一个文件夹`data`，并创建一个符号链接`VOCdevkit`。
 
