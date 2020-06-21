@@ -4,7 +4,7 @@ title:      OpenSelfSup的安装与配置
 subtitle:   如何最方便的使用自监督工具
 date:       2020-06-20
 author:     靳秋野
-header-img: img/post-bg-re-vs-ng2.jpg
+header-img: img/post/8.jpg
 catalog: true
 tags:
     - 自监督
