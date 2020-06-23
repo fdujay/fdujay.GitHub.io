@@ -39,7 +39,7 @@ bash tools/dist_train.sh ${CONFIG_FILE} ${GPUS} [optional arguments]
 
 ```shell
 # checkpoints and logs saved in WORK_DIR=work_dirs/selfsup/odc/r50_v1/
-bash tools/dist_train.sh configs/selfsup/odc/r50_v1.py 8
+bash tools/dist_train.sh configs/selfsup/odc/r50_v1.py 2
 ```
 
 **注意**：在训练过程中，检查点和日志与下的配置文件保存在相同的文件夹结构中`work_dirs/`。不建议使用自定义工作目录，因为评估脚本会从配置文件名推断出工作目录。如果您想将重量保存在其他地方，请使用符号链接，例如：
@@ -62,3 +62,8 @@ bash benchmarks/dist_test_svm_pretrain.sh ${CONFIG_FILE} ${PRETRAIN} ${FEAT_LIST
 # test random init
 bash benchmarks/dist_test_svm_pretrain.sh ${CONFIG_FILE} "random" ${FEAT_LIST} ${GPUS}
 ```
+
+```
+bash benchmarks/dist_test_svm_epoch.sh configs/selfsup/odc/r50_v1.py "random" feat5 2
+```
+
