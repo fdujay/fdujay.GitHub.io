@@ -20,7 +20,7 @@ HLA分型技术 主要组织相容性复合体(MHC)是脊椎动物体内最复�
 
 ### 2.1 主页
 
-链接：http://www.iedb.org/home_v3.php
+链接：[http://www.iedb.org/home_v3.php](http://www.iedb.org/home_v3.php)
 
 页面指示：
 
