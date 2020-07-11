@@ -2,7 +2,7 @@
 layout:     post
 title:      Immune Epitope Database and Analysis Resource
 subtitle:   如何快捷的使用网站进行生物信息分析
-date:       2020-06-20
+date:       2020-07-11
 author:     谭丹
 header-img: img/post-bg-hacker.jpg
 catalog: true
